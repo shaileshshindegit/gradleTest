@@ -1,0 +1,34 @@
+apply plugin: 'java'
+
+
+/*
+repositories {
+   flatDir {
+       dirs 'D:\\eclipse-jee-neon-R-win32-x86_64\\Workspace\\gradleTest\\lib'
+   }
+}*/
+
+repositories {
+    flatDir {
+        name 'localRepository'
+    }
+}
+repositories {
+    localRepository {
+        dirs 'lib'
+    }
+}
+repositories.localRepository {
+    dirs 'lib'
+}
+
+dependencies {
+   compile name: 'junit','org.hamcrest:hamcrest-all:1.3'
+ }
+
+
+jar {
+   manifest {
+      attributes 'Main-Class': 'main.java.com.bank.App'
+   }
+}
